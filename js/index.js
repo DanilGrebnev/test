@@ -2,11 +2,26 @@ const $ = (selector) => document.querySelector(selector)
 const toggleActive = (node) => {
     node.classList.toggle('active')
 }
+class toggleBlockScroll {
+    static block() {
+        const body = $('body')
+        body.style.overflow = 'hidden'
+    }
+
+    static unblock() {
+        const body = $('body')
+        body.style.overflow = 'auto'
+    }
+}
 
 document.addEventListener('DOMContentLoaded', mainFn)
 
 function mainFn(e) {
     document.addEventListener('click', eventDelegation)
+
+    const modalForm = $('.modal-for-communication__block')
+
+    modalForm.onsubmit = submitForm
 }
 
 function eventDelegation(e) {
@@ -14,6 +29,7 @@ function eventDelegation(e) {
     changeValueBasketProduct(e)
     openMobileModalMenu(e)
     redirectTokLocationMap(e)
+    openCommunicationModal(e)
 }
 
 function changeValueBasketProduct(e) {
@@ -126,6 +142,7 @@ function openBasketModal(e) {
     if (basketIcon) {
         const bascketModal = $('.user-profile__basket-modal')
         toggleActive(bascketModal)
+        toggleBlockScroll.block()
         return
     }
 
@@ -169,10 +186,57 @@ function openMobileModalMenu(e) {
     }
 }
 
+function openCommunicationModal(e) {
+    const node = e?.target
+    const icon = node.dataset.type === 'open-communication-modal'
+    let modal
+    let closeModalBtn
+
+    if (icon) {
+        modal = $('.modal-for-communication')
+        closeModalBtn = $('.modal-for-communication__close-btn')
+
+        closeModalBtn.onclick = () => {
+            modal?.classList.remove('active')
+        }
+
+        toggleActive(modal)
+        return
+    }
+
+    const closestModal = node.closest('.modal-for-communication__block')
+
+    if (!closestModal) {
+        modal = $('.modal-for-communication')
+        modal?.classList?.remove('active')
+    }
+}
 //Переадресует на карты при нажатии на иконку
 function redirectTokLocationMap(e) {
     const node = e?.target
     if (node.classList.contains('location_icon')) {
         window.location.href = 'https://yandex.ru/maps/-/CDQYeIpk'
+    }
+}
+
+function submitForm(e) {
+    e.preventDefault()
+    try {
+        const data = new FormData(this)
+
+        const name = data.get('name')
+        const phone = data.get('phone')
+        const acceptSendPersonalData = data.get('acceptSendPersonalData')
+
+        if (!acceptSendPersonalData) {
+            alert('Согласитесь на обработку персональных данных')
+            return
+        }
+
+        alert('Успешно отправлено')
+        $('.modal-for-communication').classList.remove('active')
+        console.log({ name, phone })
+    } catch (err) {
+        alert('Ошибка отправки')
     }
 }

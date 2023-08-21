@@ -25,6 +25,31 @@
         <title>Document</title>
     </head>
     <body>
+        <!-- Модальное окно обратной связи -->
+        <div class="modal-for-communication">
+            <form class="modal-for-communication__block">
+                <img 
+                alt="Закрыть окно обратной связи" 
+                src="assets/close-modal_icon.svg" class="modal-for-communication__close-btn" 
+                />
+                
+                <p class="modal-for-communication__title">Заполните данные и мы свяжемся 
+                    с вами в рабочее время и ответим на 
+                    все интересующие вопросы
+                </p>
+                <input required type="text" name="name" placeholder="Имя*" />
+                <input required type="tel" name="phone" placeholder="Телефон*"/>
+                <label>
+                    <input  name="acceptSendPersonalData" class="communication__checkbox-input" type="checkbox" />
+                    <img class="communication__checkbox-icon" src="assets/checkbox.svg"  />
+                    <span class="communication__not-checked-icon"></span>
+                    <p>Даю своё согласие на обработку персональных данных</p>
+                </label>
+
+                <button data-type="submit-communication-form-btn" class="big-button">Заказать звонок</button>
+            </form>
+        </div>
+
         <header class="header">
             <div class="header__logo header-item">
                 <img
@@ -77,7 +102,7 @@
                     href="tel:+78312199781"
                     >8 (831) 219-97-81</a
                 >
-                <p>Заказать звонок</p>
+                <p class="request-call" data-type="open-communication-modal">Заказать звонок</p>
             </div>
 
             <div class="header__catalog header-item">
