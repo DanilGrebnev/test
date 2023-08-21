@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+        />
+        <link
+            rel="stylesheet"
+            href="style/font.css"
+        />
+        <link
+            rel="stylesheet"
+            href="style/reset.css"
+        />
+        <link
+            rel="stylesheet"
+            href="style/style.css"
+        />
+        <link
+            rel="stylesheet"
+            href="style/adaptation.css"
+        />
+        <title>Document</title>
+    </head>
+    <body>
+        <header class="header">
+            <div class="header__logo header-item">
+                <img
+                    alt="logo"
+                    src="assets/logo.svg"
+                />
+                <p class="header__logo-text">
+                    Интернет-магазин дверей в Нижнем Новгороде
+                </p>
+            </div>
+
+            <div class="header__search header-item">
+                <img
+                    alt="Поиск"
+                    alt="Поиск"
+                    src="assets/search_icon.svg"
+                />
+                <input placeholder="Поиск" />
+            </div>
+
+            <div class="header__location header-item">
+                <img
+                    class="location_icon"
+                    alt="Открыть карты"
+                    src="assets/location_icon.svg"
+                />
+                <a
+                    class="location-link"
+                    target="_blank"
+                    href="https://yandex.ru/maps/-/CDQYeIpk"
+                >
+                    Нижний Новгород, ул. Уличная, 1, оф. 15
+                </a>
+            </div>
+
+            <div class="header__contacts header-item">
+                <a href="https://t.me/+79376975901">
+                    <img
+                        alt="telegram"
+                        src="assets/telegram_icon.svg"
+                    />
+                </a>
+                <a href="https://wa.me/+79376975901">
+                    <img
+                        alt="whatsap"
+                        src="assets/whatsap_icon.svg"
+                    />
+                </a>
+                <a
+                    class="header__contacts-phone"
+                    href="tel:+78312199781"
+                    >8 (831) 219-97-81</a
+                >
+                <p>Заказать звонок</p>
+            </div>
+
+            <div class="header__catalog header-item">
+                <img
+                    alt="Каталог"
+                    src="assets/catalog_icon.svg"
+                />
+                <span>Каталог</span>
+                <p class="header__product-amount">Более 3000 товаров</p>
+            </div>
+
+            <nav class="header__menu header-item">
+                <ul>
+                    <li><a href="#stok">акции</li>
+                    <li><a href="#delivery">доставка и установка</a></li>
+                    <li><a href="#payment">оплата</a></li>
+                    <li><a href="sertificate">сертификаты</a></li>
+                    <li><a href="about">о нас</a></li>
+                    <li><a href="contacts">контакты</a></li>
+                </ul>
+            </nav>
+            <ul class="header__user-profile header-item">
+                <li>
+                    <img
+                        alt="Сравнить"
+                        src="assets/compare_icon.svg"
+                    />
+                    <span>3</span>
+                </li>
+                <li>
+                    <img
+                        alt="Избранное"
+                        src="assets/heart_icon.svg"
+                    />
+                </li>
+                <li>
+                    <img
+                        alt="Корзина"
+                        data-type="basket"
+                        src="assets/basket_icon.svg"
+                    />
+                    <span data-type="basket-amount">2</span>
+                </li>
+                <li>
+                    <img
+                        alt="Профиль"
+                        src="assets/people_icon.svg"
+                    />
+                </li>
+            </ul>
+        </header>
+        <main>
+            <!-- Мобильное модальное окно навигации -->
+            <div class="mobile-modal">
+                <div class="header__location header-item">
+                    <img
+                        class="location_icon"
+                        alt="Открыть карты"
+                        src="assets/location_icon.svg"
+                    />
+                    <a
+                        class="location-link"
+                        target="_blank"
+                        href="https://yandex.ru/maps/-/CDQYeIpk"
+                    >
+                        Нижний Новгород, ул. Уличная, 1, оф. 15
+                    </a>
+                </div>
+                <nav>
+                    <ul class="mobile-modal__navigation">
+                        <a href="#delivery">Установка и доставка</a>
+                        <a href="#payment">оплата</a>
+                        <a href="#sertificate">сертификаты</a>
+                        <a href="#about">о нас</a>
+                        <a href="#contacts">контакты</a>
+                    </ul>
+                </nav>
+                <button class="transparent-button">Заказать звонок</button>
+                <footer class="mobile-modal__footer">
+                    <div>
+                        <img
+                            alt="Сравнение"
+                            class="mobile-modal__footer-item"
+                            src="assets/compare_icon.svg"
+                        />
+                    </div>
+                    <div>
+                        <img
+                            alt="Избранное"
+                            class="mobile-modal__footer-item"
+                            src="assets/heart_icon.svg"
+                        />
+                    </div>
+                    <div>
+                        <img
+                            alt="Профиль"
+                            class="mobile-modal__footer-item"
+                            src="assets/people_icon.svg"
+                        />
+                    </div>
+                </footer>
+            </div>
+
+            <!-- Модальное окно корзины -->
+            <section class="user-profile__basket-modal">
+                <div class="basket-modal__card-items">
+                    <img
+                        alt="Изображение товара"
+                        src="assets/door_1.png"
+                    />
+
+                    <div class="card-items__items-info">
+                        <p>Браво-22 Snow Melina / Magic Fog</p>
+                        <span>Межкомнатная дверь</span>
+                    </div>
+
+                    <div class="card-items__result">
+                        <div>
+                            <span class="card-items__result-price"
+                                >300 600</span
+                            >
+                            <span>₽</span>
+                        </div>
+
+                        <div class="count-buttons-group">
+                            <img
+                                alt="Уменьшить количетсво"
+                                data-type="dec-product"
+                                src="assets/decrement_icon.svg"
+                            />
+                            <div data-product_count>1</div>
+                            <img
+                                alt="Увеличить количество"
+                                data-type="inc-product"
+                                src="assets/increment_icon.svg"
+                            />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="basket-modal__card-items">
+                    <img
+                        alt="Изображение товара"
+                        src="assets/door_1.png"
+                    />
+
+                    <div class="card-items__items-info">
+                        <p>Браво-22 Snow Melina / Magic Fog</p>
+                        <span>Межкомнатная дверь</span>
+                    </div>
+
+                    <div class="card-items__result">
+                        <div>
+                            <span class="card-items__result-price">20 600</span>
+                            <span>₽</span>
+                        </div>
+
+                        <div class="count-buttons-group">
+                            <img
+                                alt="Уменьшить количество"
+                                data-type="dec-product"
+                                src="assets/decrement_icon.svg"
+                            />
+                            <div data-product_count>1</div>
+                            <img
+                                alt="Увеличить количество"
+                                data-type="inc-product"
+                                src="assets/increment_icon.svg"
+                            />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="basket-modal__footer">
+                    <div>
+                        Сумма заказа:
+                        <span class="basket-modal__order-price">321200</span>
+                        <span>₽</span>
+                    </div>
+                    <button class="big-button">Перейти к оформлению</button>
+                </div>
+            </section>
+
+            <!-- Нижнее мобильное меню -->
+            <nav class="mobile-menu">
+                <ul class="mobile-menu__container">
+                    <li>
+                        <img
+                            alt="Каталог"
+                            src="assets/mobile-menu__catalog-icon.svg"
+                        />
+                        <p>Каталог</p>
+                    </li>
+                    <li>
+                        <img
+                            alt="Поиск"
+                            src="assets/search_icon.svg"
+                        />
+                        <p>Поиск</p>
+                    </li>
+                    <li>
+                        <img
+                            data-type="basket"
+                            alt="Корзина"
+                            src="assets/basket_icon.svg"
+                        />
+                        <p>Корзина</p>
+                    </li>
+                    <li>
+                        <img
+                            alt="Скидки"
+                            src="assets/discounts_icon.svg"
+                        />
+                        <p>Акции</p>
+                    </li>
+                    <li>
+                        <img
+                            alt="Меню"
+                            data-type="menu"
+                            src="assets/menu_icon.svg"
+                        />
+                        <p>Меню</p>
+                    </li>
+                </ul>
+            </nav>
+        </main>
+    </body>
+    <script src="js/index.js"></script>
+</html>
